@@ -1,0 +1,116 @@
+-- Gui to Lua
+-- Version: 3.1
+
+-- Instances:
+
+local Lynx = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Border = Instance.new("Frame")
+local ModuleBox = Instance.new("TextBox")
+local Execute = Instance.new("TextButton")
+local Clear = Instance.new("TextButton")
+
+--Properties:
+
+Lynx.Name = "Lynx"
+Lynx.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Lynx.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = Lynx
+Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.527565718, 0, 0.236928105, 0)
+Main.Size = UDim2.new(0, 300, 0, 200)
+
+Title.Name = "Title"
+Title.Parent = Main
+Title.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Title.BackgroundTransparency = 1.000
+Title.BorderSizePixel = 0
+Title.Size = UDim2.new(0, 300, 0, 20)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Lynx"
+Title.TextColor3 = Color3.fromRGB(255, 0, 0)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+Border.Name = "Border"
+Border.Parent = Main
+Border.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Border.BorderSizePixel = 0
+Border.Position = UDim2.new(0, 0, 0.100000001, 0)
+Border.Size = UDim2.new(0, 300, 0, 1)
+
+ModuleBox.Name = "ModuleBox"
+ModuleBox.Parent = Main
+ModuleBox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ModuleBox.BorderColor3 = Color3.fromRGB(255, 0, 0)
+ModuleBox.Position = UDim2.new(0.0500000045, 0, 0.159999996, 0)
+ModuleBox.Size = UDim2.new(0, 270, 0, 120)
+ModuleBox.ClearTextOnFocus = false
+ModuleBox.Font = Enum.Font.SourceSans
+ModuleBox.MultiLine = true
+ModuleBox.PlaceholderColor3 = Color3.fromRGB(255, 0, 0)
+ModuleBox.PlaceholderText = "Script here"
+ModuleBox.Text = ""
+ModuleBox.TextColor3 = Color3.fromRGB(255, 0, 0)
+ModuleBox.TextSize = 14.000
+ModuleBox.TextXAlignment = Enum.TextXAlignment.Left
+ModuleBox.TextYAlignment = Enum.TextYAlignment.Top
+
+Execute.Name = "Execute"
+Execute.Parent = Main
+Execute.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Execute.BorderColor3 = Color3.fromRGB(255, 0, 0)
+Execute.Position = UDim2.new(0.0500000007, 0, 0.790000021, 0)
+Execute.Size = UDim2.new(0, 130, 0, 35)
+Execute.Font = Enum.Font.SourceSans
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(255, 0, 0)
+Execute.TextSize = 14.000
+
+Clear.Name = "Clear"
+Clear.Parent = Main
+Clear.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Clear.BorderColor3 = Color3.fromRGB(255, 0, 0)
+Clear.Position = UDim2.new(0.516666651, 0, 0.790000021, 0)
+Clear.Size = UDim2.new(0, 130, 0, 35)
+Clear.Font = Enum.Font.SourceSans
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.fromRGB(255, 0, 0)
+Clear.TextSize = 14.000
+
+-- Scripts:
+
+local function JIVUOHV_fake_script() -- Execute.ExecuteScript 
+	local script = Instance.new('Script', Execute)
+
+	function Execute()
+		game.ReplicatedStorage.LynxEvent:FireServer(script.Parent.Parent.ModuleBox.Text)
+	end
+	
+	script.Parent.MouseButton1Click:Connect(Execute)
+end
+coroutine.wrap(JIVUOHV_fake_script)()
+local function RRZMH_fake_script() -- Clear.ClearScript 
+	local script = Instance.new('Script', Clear)
+
+	function Clear()
+		script.Parent.Parent.ModuleBox.Text = ""
+	end
+	
+	script.Parent.MouseButton1Click:Connect(Clear)
+end
+coroutine.wrap(RRZMH_fake_script)()
+local function EJYGVVL_fake_script() -- Main.DragScript 
+	local script = Instance.new('Script', Main)
+
+	local pr = script.Parent
+	pr.Active = true
+	pr.Selectable = true
+	pr.Draggable = true
+end
+coroutine.wrap(EJYGVVL_fake_script)()
