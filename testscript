@@ -15,7 +15,7 @@ local Clear = Instance.new("TextButton")
 
 Lynx.Name = "Lynx"
 Lynx.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-Lynx.Enabled = false
+Lynx.Enabled = true
 Lynx.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Lynx.ResetOnSpawn = false
 
