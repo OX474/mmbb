@@ -15,7 +15,9 @@ local Clear = Instance.new("TextButton")
 
 Lynx.Name = "Lynx"
 Lynx.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Lynx.Enabled = false
 Lynx.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Lynx.ResetOnSpawn = false
 
 Main.Name = "Main"
 Main.Parent = Lynx
@@ -85,7 +87,7 @@ Clear.TextSize = 14.000
 
 -- Scripts:
 
-local function JIVUOHV_fake_script() -- Execute.ExecuteScript 
+local function UXLD_fake_script() -- Execute.ExecuteScript 
 	local script = Instance.new('Script', Execute)
 
 	function Execute()
@@ -94,8 +96,8 @@ local function JIVUOHV_fake_script() -- Execute.ExecuteScript
 	
 	script.Parent.MouseButton1Click:Connect(Execute)
 end
-coroutine.wrap(JIVUOHV_fake_script)()
-local function RRZMH_fake_script() -- Clear.ClearScript 
+coroutine.wrap(UXLD_fake_script)()
+local function YQERC_fake_script() -- Clear.ClearScript 
 	local script = Instance.new('Script', Clear)
 
 	function Clear()
@@ -104,8 +106,8 @@ local function RRZMH_fake_script() -- Clear.ClearScript
 	
 	script.Parent.MouseButton1Click:Connect(Clear)
 end
-coroutine.wrap(RRZMH_fake_script)()
-local function EJYGVVL_fake_script() -- Main.DragScript 
+coroutine.wrap(YQERC_fake_script)()
+local function TQVODR_fake_script() -- Main.DragScript 
 	local script = Instance.new('Script', Main)
 
 	local pr = script.Parent
@@ -113,4 +115,4 @@ local function EJYGVVL_fake_script() -- Main.DragScript
 	pr.Selectable = true
 	pr.Draggable = true
 end
-coroutine.wrap(EJYGVVL_fake_script)()
+coroutine.wrap(TQVODR_fake_script)()
